@@ -1,0 +1,19 @@
+@import '../../Assets/Styles/colors.scss';
+
+.output {
+    font-size: .75rem;
+
+    &.correct {
+        color: $green;
+    }
+
+    &.incorrect {
+        color: $red;
+    }
+
+    .react-icons {
+        width: 14px;
+        float: left;
+        margin-right: 4px;
+    }
+}

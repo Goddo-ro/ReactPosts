@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap');
+@import './colors.scss';
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #222831;
+    font-family: 'Roboto', sans-serif;
+}
+
+input {
+    font-size: 1.1rem;
+    background-color: transparent;
+    border: 0;
+    border-bottom: 1px solid $aqua;
+    margin-bottom: 24px;
+    color: $white;
+    padding: 4px;
+
+    &::placeholder {
+        color: #A7A7A7;
+    }
+}
+
+input:focus {
+    background-color: transparent;
+    outline: none;
+}
+
+input[type=password] {
+    letter-spacing: 2px;
+
+    &::placeholder {
+        letter-spacing: 0;
+    }
+
+    &:-ms-input-placeholder {
+        letter-spacing: 0;
+    }
+
+    &::-ms-input-placeholder {
+        letter-spacing: 0;
+    }
+    
+}
+
+.btn {
+    cursor: pointer;
+    background-color: $gray;
+    background: rgba(34, 40, 49, .3);
+    border: 1px solid $aqua;
+    border-radius: 4px;
+    padding: 8px;
+    color: $white;
+    
+}
+
+.btn:active,
+.btn:hover {
+    background-color: $aqua;
+    color: $gray;
+}
