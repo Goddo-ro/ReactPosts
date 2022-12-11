@@ -4,12 +4,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    position: absolute;
     width: 350px;
     height: 500px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    margin: auto;
+    margin-top: 128px;
+    position: relative;
     padding: 24px;
     background-color: $gray;
     border: 1px solid $dark-aqua;

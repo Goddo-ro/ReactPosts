@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap');
 @import './colors.scss';
 
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -13,7 +17,8 @@ input {
     background-color: transparent;
     border: 0;
     border-bottom: 1px solid $aqua;
-    margin-bottom: 24px;
+    margin-top: 24px;
+    margin-bottom: 4px;
     color: $white;
     padding: 4px;
 
@@ -42,6 +47,17 @@ input[type=password] {
         letter-spacing: 0;
     }
     
+}
+
+a {
+    text-decoration: none;
+    color: $aqua;
+    cursor: pointer;
+}
+
+.container {
+    width: 100%;
+    max-width: 1600px;
 }
 
 .btn {
