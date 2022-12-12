@@ -3,7 +3,8 @@ import axios from 'axios';
 import { useNavigate } from "react-router-dom";
 import Output from '../Components/Output/Output';
 import { comparePasword } from '../Services/Utils/passwordHasher';
-import '../Assets/Styles/formPages.scss';
+import blurAction from '../Services/Actions/blurAction';
+
 
 export default function Login(props) {
     const [username, setUsername] = React.useState("");
@@ -11,6 +12,10 @@ export default function Login(props) {
     const [userExists, setUserExists] = React.useState(true);
     const [passwordEquals, setPasswordEquals] = React.useState(true);
     const navigate = useNavigate();
+
+    React.useEffect(() => {
+        blurAction();
+    }, []);
 
     function login(event) {
         event.preventDefault();
@@ -26,9 +31,7 @@ export default function Login(props) {
                     const result = comparePasword(password, person.password);
                     if (result) {
                         props.setUser(person);
-                        setPasswordEquals(true);
-                        navigate('/')
-
+                        props.close();
                     } else {
                         setPasswordEquals(false);
                     }
@@ -37,29 +40,27 @@ export default function Login(props) {
     }
 
     return(
-        <div className="userForm">
-            <form onSubmit={login}>
-                <h1>Welcome.</h1>
-                <input type="text" className="username" placeholder="Username"
-                        onChange={(e) => {
-                            setUsername(e.target.value);
-                            setUserExists(true);
-                            setPasswordEquals(true);
-                        }}>        
-                </input>
-                {!userExists && <Output status={false} message={"User does not exist"} />}
+        <form onSubmit={login}>
+            <h1>Welcome.</h1>
+            <input type="text" className="username" placeholder="Username"
+                    onChange={(e) => {
+                        setUsername(e.target.value);
+                        setUserExists(true);
+                        setPasswordEquals(true);
+                    }}>        
+            </input>
+            {!userExists && <Output status={false} message={"User does not exist"} />}
 
-                <input type="password" className="password" placeholder="Password"
-                        onChange={(e) => {
-                            setPassword(e.target.value)
-                            setPasswordEquals(true);
-                        }}>        
-                </input>
-                {!passwordEquals && <Output status={false} message={"Passwords do not equal"} />}
+            <input type="password" className="password" placeholder="Password"
+                    onChange={(e) => {
+                        setPassword(e.target.value)
+                        setPasswordEquals(true);
+                    }}>        
+            </input>
+            {!passwordEquals && <Output status={false} message={"Passwords do not equal"} />}
 
-                <button className="btn">Sign In</button>
-                <p className="smart-text">Saved with Goddo-ro's politics</p>
-            </form>
-        </div>
+            <button className="btn">Sign In</button>
+            <p className="smart-text">Saved with Goddo-ro's politics</p>
+        </form>
     )
 }

@@ -14,6 +14,8 @@ export default function Header(props) {
                 </a>
                 <div className="links">
                     <Link to={'/'}>Home</Link>
+                    <Link to={'/'}>Posts</Link>
+                    <Link to={'/'}>Friends</Link>
                 </div>
                 { Object.keys(user).length !== 0
                     ? <div className="user-section">
@@ -21,8 +23,9 @@ export default function Header(props) {
                         <a onClick={props.exit} className="exit">Exit</a>
                         </div>
                     : <div className="user-section">
-                        <Link to={'/login'}>Sign In</Link>
-                        <Link className='register-link' to={'/register'}>Sign Up</Link>
+                        <a onClick={props.setOpenLogin}>Sign In</a>
+                        <a onClick={props.setOpenRegister}
+                            className='register-link'>Sign Up</a>
                         </div>
                 }
             </div>

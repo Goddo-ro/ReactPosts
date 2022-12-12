@@ -23,12 +23,22 @@ header {
 
     .links {
         font-size: 1.5rem;
-        text-decoration: underline;
         text-transform: uppercase;     
         font-weight: 100;  
 
         a {
-            color: $dark-aqua;
+            color: $aqua;
+            padding-inline: 8px;
+            transition: all 0.1s;
+        }
+
+        a:hover,
+        a:focus {
+            border-bottom: 1px solid $aqua;
+        }
+
+        a:not(:last-child) {
+            border-right: 1px solid $dark-aqua;
         }
     }
 

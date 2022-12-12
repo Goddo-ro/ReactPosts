@@ -2,12 +2,12 @@
 
 .userForm {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 350px;
     height: 500px;
     margin: auto;
-    margin-top: 128px;
     position: relative;
     padding: 24px;
     background-color: $gray;
@@ -17,6 +17,14 @@
     * {
         display: block;
         width: 100%;
+    }
+
+    .close-btn {
+        color: $red;
+        position: absolute;
+        width: 16px;
+        right: 8px;
+        top: 8px;
     }
 
     h1 {
@@ -45,5 +53,17 @@
         bottom: 0;
         letter-spacing: 1px;
         text-align: center;
+    }
+}
+
+@media (min-width: 1000px) {
+    .form-container {
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        top: 0;
+        bottom: 0;
+        display: flex;
+        align-items: center;
     }
 }
