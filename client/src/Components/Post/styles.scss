@@ -1,0 +1,26 @@
+@import '../../Assets/Styles/colors.scss';
+
+.post {
+    position: relative;
+    padding: 4px 8px;
+    border-bottom: 1px solid $aqua;
+    background-color: $gray;
+    color: $white;  
+
+    &:not(:last-child) {
+        margin-bottom: 16px;
+    }
+
+    h3, a {
+        display: inline;
+        margin: 0;
+    }
+
+    h3 {
+        margin-right: 8px;
+    }
+
+    p {
+        margin-top: 4px;
+    }
+}

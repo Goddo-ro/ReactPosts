@@ -77,3 +77,10 @@ a {
     background-color: $aqua;
     color: $gray;
 }
+
+.posts {
+    margin-inline: auto;
+    width: 1300px;
+    z-index: 0;
+    background-color: $gray;
+}
